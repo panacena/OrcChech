@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/capture_containter"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:fitsSystemWindows="true">
+
+    <SurfaceView
+        android:id="@+id/capture_preview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"/>
+
+    <RelativeLayout
+        android:id="@+id/capture_crop_layout"
+        android:layout_width="250.0dip"
+        android:layout_height="250.0dip"
+        android:layout_centerInParent="true"
+        android:background="@drawable/capture"
+        android:contentDescription="@string/app_name">
+
+        <ImageView
+            android:id="@+id/capture_scan_line"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_margin="5.0dip"
+            android:background="@drawable/scan_line"
+            android:contentDescription="@string/app_name"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/top_mask"
+        android:layout_width="fill_parent"
+        android:layout_height="100.0dip"
+        android:layout_above="@id/capture_crop_layout"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/scan_mask"
+        android:contentDescription="@string/app_name"/>
+
+    <ImageView
+        android:id="@+id/bottom_mask"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/capture_crop_layout"
+        android:background="@drawable/scan_mask"
+        android:contentDescription="@string/app_name"/>
+
+    <ImageView
+        android:id="@+id/left_mask"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/bottom_mask"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/top_mask"
+        android:layout_toLeftOf="@id/capture_crop_layout"
+        android:background="@drawable/scan_mask"
+        android:contentDescription="@string/app_name"/>
+
+    <ImageView
+        android:id="@+id/right_mask"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/bottom_mask"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/top_mask"
+        android:layout_toRightOf="@id/capture_crop_layout"
+        android:background="@drawable/scan_mask"
+        android:contentDescription="@string/app_name"/>
+
+    <TextView
+        android:id="@+id/tv_scan_alt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/capture_crop_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50.0dip"
+        android:text="@string/txt_scan_alt"
+        android:textColor="@android:color/white"
+        android:textSize="18.0sp"/>
+
+    <include layout="@layout/widget_toolbar"/>
+</RelativeLayout>

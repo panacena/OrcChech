@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">寄收快递</string>
+    <string name="txt_scan_alt">将二维码放入框内, 即可自动扫描</string>
+    <string name="btn_submit">提交</string>
+    <string name="hint_select_carrie_company">请选择承运公司</string>
+    <string name="lb_carrie_company">承运公司:</string>
+    <string name="lb_oid">运单号:</string>
+
+    <string name="lb_name">姓名:</string>
+    <string name="lb_nation">民族:</string>
+    <string name="lb_sex">性别:</string>
+    <string name="lb_birthday">出生日期:</string>
+    <string name="lb_birthplace">住址:</string>
+    <string name="lb_pid">身份证号:</string>
+    <string name="lb_sender_tel2">发件人电话:</string>
+    <string name="lb_receiver">收件人:</string>
+    <string name="lb_receiver_tel">收件人电话:</string>
+    <string name="lb_receiver_addr">收件人地址:</string>
+    <string name="lb_sender">发件人:</string>
+    <string name="lb_goods">品名:</string>
+    <string name="lb_amount">数量:</string>
+</resources>

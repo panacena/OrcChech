@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clickable="true"
+    android:background="@color/color_BG4" >
+
+
+    <RelativeLayout
+        android:id="@+id/photoTopBackButtonLayout"
+        android:layout_width="80dip"
+        android:layout_height="60dip"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dip"
+        android:paddingLeft="15.0dip" >
+
+        <ImageView
+            android:id="@+id/photoBackButton"
+            android:layout_width="30dip"
+            android:layout_height="30dip"
+            android:layout_centerVertical="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/back" />
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:layout_below="@+id/photoTopBackButtonLayout"
+        android:id="@+id/poiPhotoPager"
+        android:clickable="true"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+
+
+</RelativeLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:background="@drawable/shape_item_orc"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="100dip"
+        android:orientation="horizontal"
+        android:id="@+id/ll_item"
+        android:padding="10.0dip" >
+
+        <ImageView
+            android:id="@+id/iv_goods"
+            android:layout_width="110.0dip"
+            android:layout_height="80dip"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitXY"
+            android:src="@drawable/thumbnail_common" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10.0dip"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_mOidMet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2.0dip"
+                android:text="运单号：606054263"
+                android:textColor="@color/txt_title"
+                android:textSize="13.0sp" />
+
+            <TextView
+                android:id="@+id/tv_mSenderMet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4.0dip"
+                android:text="寄件人 ：哈哈"
+                android:textColor="@color/txt_title"
+                android:textSize="13.0sp" />
+
+
+            <TextView
+                android:id="@+id/tv_mReceiverMet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4.0dip"
+                android:text="收件人 ：哈哈"
+                android:textColor="@color/txt_title"
+                android:textSize="13.0sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>

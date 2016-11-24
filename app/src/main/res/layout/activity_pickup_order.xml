@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/toolbars"
+        android:layout_width="fill_parent"
+        android:background="@color/blue"
+        android:layout_alignParentTop="true"
+        android:layout_height="45dip">
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="收件采集"
+                android:textColor="@color/white"
+                android:textSize="18.0sp"/>
+
+            <TextView
+                android:id="@+id/toolbar_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:ellipsize="end"
+                android:layout_marginRight="8dip"
+                android:singleLine="true"
+                android:text="我的记录"
+                android:textColor="@color/white"
+                android:textSize="14.0sp"/>
+    </RelativeLayout>
+    <ScrollView
+        android:id="@+id/mScrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/toolbars"
+        android:layout_above="@+id/mBottomSubmit">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/appbar_padding_top"
+                android:background="@color/gray"/>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5.0dip"
+                    android:layout_weight="1.0"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/mCameraPidIv"
+                        android:layout_width="65.0dip"
+                        android:layout_height="40.0dip"
+                        android:clickable="true"
+                        android:src="@drawable/selector_take_pid"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="拍摄身份证"
+                        android:textSize="14.0sp"/>
+                </LinearLayout>
+
+                <include layout="@layout/vertical_divide_line"/>
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5.0dip"
+                    android:layout_weight="1.0"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingLeft="10.0dip">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/pick_up_ll_take_goods"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/mCameraGoodsIv"
+                                android:layout_width="65.0dip"
+                                android:layout_height="40.0dip"
+                                android:src="@drawable/selector_take_goods"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="拍摄货物"
+                                android:textSize="14.0sp"/>
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <include layout="@layout/vertical_divide_line"/>
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5.0dip"
+                    android:layout_weight="1.0"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingLeft="10.0dip">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/pick_up_ll_take_way_bill"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/mCameraOrderIv"
+                                android:layout_width="65.0dip"
+                                android:layout_height="40.0dip"
+                                android:src="@drawable/selector_take_order"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="拍摄运单"
+                                android:textSize="14.0sp"/>
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/appbar_padding_top"
+                android:background="@color/gray"/>
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:layout_marginTop="5dip"
+                android:layout_marginBottom="5dip"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/tv_mOidMet"
+                    android:layout_height="@dimen/edit_item_height"
+                    android:layout_width="wrap_content"
+                    android:text="@string/lb_oid"
+                    android:layout_marginLeft="@dimen/edit_item_marginLeft"
+                    android:textColor="@color/gray_text_pay"
+                    android:gravity="center_vertical"/>
+                <EditText
+                    android:id="@+id/mOidMet"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/edit_item_height"
+                    android:layout_marginRight="@dimen/text_edtext"
+                    android:layout_marginLeft="@dimen/text_edtext"
+                    android:layout_toRightOf="@+id/tv_mOidMet"
+                    android:layout_toLeftOf="@+id/iv_scan"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textColor="@color/gray_text_pay"
+                    android:background="@null"
+                    android:inputType="number"
+                    />
+
+                <ImageView
+                    android:id="@+id/iv_scan"
+                    android:layout_width="@dimen/span_item_height"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:layout_marginRight="10.0dip"
+                    android:src="@drawable/selector_take_scan"
+                    android:layout_height="@dimen/span_item_height"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="30.0dip"
+                android:background="@color/gray"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/mRequiredLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="@dimen/edit_item_marginLeft"
+                    android:gravity="center_vertical"
+                    android:text="*"
+                    android:textColor="@color/red"/>
+
+                <TextView
+                    android:id="@+id/pickup_tv_idcard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_toRightOf="@id/mRequiredLabel"
+                    android:gravity="center_vertical"
+                    android:text="发件人身份证信息"
+                    android:textSize="@dimen/text_size_normal"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8.0dip"
+                android:layout_marginLeft="@dimen/edit_item_marginLeft"
+                android:layout_marginRight="@dimen/edit_item_marginLeft"
+                android:layout_marginTop="8.0dip"
+                android:background="@drawable/shape_id_card_bg"
+                android:orientation="vertical"
+                android:paddingBottom="10.0dip"
+                android:paddingLeft="5.0dip"
+                android:paddingRight="5.0dip"
+                android:paddingTop="10.0dip">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/mAvatarIv"
+                        android:layout_width="50.0dip"
+                        android:layout_height="68.0dip"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="3.0dip"
+                        android:layout_marginRight="35.0dip"/>
+
+                    <TextView
+                        android:id="@+id/tv_mSenderMet"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="@string/lb_name"
+                        android:textColor="@color/gray_text_pay"
+                        android:gravity="center_vertical"/>
+                    <EditText
+                        android:id="@+id/mSenderMet"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@id/mAvatarIv"
+                        android:layout_marginRight="@dimen/text_edtext"
+                        android:layout_marginLeft="@dimen/text_edtext"
+                        android:layout_toRightOf="@+id/tv_mSenderMet"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/text_size_normal"
+                        android:textColor="@color/gray_text_pay"
+                        android:background="@null"/>
+
+                    <LinearLayout
+                        android:id="@+id/pickup_ll_content"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/mSenderMet"
+                        android:layout_marginTop="8.0dip"
+                        android:layout_toLeftOf="@id/mAvatarIv">
+
+
+                        <TextView
+                            android:id="@+id/tv_mSexMet"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="@string/lb_sex"
+                            android:textColor="@color/gray_text_pay"
+                            android:gravity="center_vertical"/>
+
+                        <EditText
+                            android:id="@+id/mSexMet"
+                            android:layout_width="0.0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2.0"
+                            android:gravity="center_vertical"
+                            android:paddingRight="0.0dip"
+                            android:layout_marginLeft="@dimen/text_edtext"
+                            android:textSize="@dimen/text_size_normal"
+                            android:textColor="@color/gray_text_pay"
+                            android:background="@null"/>
+
+                        <TextView
+                            android:id="@+id/tv_mNationMet"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="@string/lb_nation"
+                            android:textColor="@color/gray_text_pay"
+                            android:gravity="center_vertical"/>
+
+                        <EditText
+                            android:id="@+id/mNationMet"
+                            android:layout_width="0.0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3.0"
+                            android:gravity="center_vertical"
+                            android:paddingRight="0.0dip"
+                            android:layout_marginLeft="@dimen/text_edtext"
+                            android:textSize="@dimen/text_size_normal"
+                            android:textColor="@color/gray_text_pay"
+                            android:background="@null"/>
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/tv_mBirthdayMet"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="@string/lb_birthday"
+                        android:textColor="@color/gray_text_pay"
+                        android:layout_below="@id/pickup_ll_content"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8.0dip"/>
+
+                    <EditText
+                        android:id="@+id/mBirthdayMet"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/pickup_ll_content"
+                        android:layout_toRightOf="@+id/tv_mBirthdayMet"
+                        android:layout_marginTop="8.0dip"
+                        android:layout_toLeftOf="@id/mAvatarIv"
+                        android:gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/text_edtext"
+                        android:textSize="@dimen/text_size_normal"
+                        android:textColor="@color/gray_text_pay"
+                        android:background="@null"/>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+                        <TextView
+                            android:id="@+id/tv_mBirthplaceMet"
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:text="@string/lb_birthplace"
+                            android:textColor="@color/gray_text_pay"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="8.0dip"/>
+                        <EditText
+                            android:id="@+id/mBirthplaceMet"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8.0dip"
+                            android:gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/text_edtext"
+                            android:layout_toRightOf="@+id/tv_mBirthplaceMet"
+                            android:textSize="@dimen/text_size_normal"
+                            android:textColor="@color/gray_text_pay"
+                            android:background="@null"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_mPidMet"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="@string/lb_pid"
+                        android:textColor="@color/gray_text_pay"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="8.0dip"/>
+                    <EditText
+                        android:id="@+id/mPidMet"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8.0dip"
+                        android:gravity="center_vertical"
+                        android:layout_toRightOf="@+id/tv_mPidMet"
+                        android:layout_marginLeft="@dimen/text_edtext"
+                        android:textSize="@dimen/text_size_normal"
+                        android:textColor="@color/gray_text_pay"
+                        android:background="@null"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <include layout="@layout/divide_line"/>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_mTelMet"
+                        android:layout_height="@dimen/edit_item_height"
+                        android:layout_width="wrap_content"
+                        android:text="@string/lb_sender_tel2"
+                        android:layout_marginLeft="@dimen/edit_item_marginLeft"
+                        android:textColor="@color/gray_text_pay"
+                        android:gravity="center_vertical"/>
+                    <EditText
+                        android:id="@+id/mTelMet"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/edit_item_height"
+                        android:layout_marginLeft="@dimen/edit_item_marginLeft"
+                        android:layout_toRightOf="@+id/tv_mTelMet"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/text_size_normal"
+                        android:inputType="number"
+                        android:textColor="@color/gray_text_pay"
+                        android:background="@null"/>
+            </RelativeLayout>
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/appbar_padding_top"
+                android:background="@color/gray"/>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_mReceiverMet"
+                        android:layout_height="@dimen/edit_item_height"
+                        android:layout_width="wrap_content"
+                        android:text="@string/lb_receiver"
+                        android:layout_marginLeft="@dimen/edit_item_marginLeft"
+                        android:textColor="@color/gray_text_pay"
+                        android:gravity="center_vertical"/>
+
+                    <EditText
+                        android:id="@+id/mReceiverMet"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/edit_item_height"
+                        android:layout_marginLeft="@dimen/edit_item_marginLeft"
+                        android:layout_toRightOf="@+id/tv_mReceiverMet"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/text_size_normal"
+                        android:textColor="@color/gray_text_pay"
+                        android:background="@null"/>
+
+                </RelativeLayout>
+                <include layout="@layout/divide_line"/>
+
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_mReceiverTelMet"
+                            android:layout_height="@dimen/edit_item_height"
+                            android:layout_width="wrap_content"
+                            android:text="@string/lb_receiver_tel"
+                            android:layout_marginLeft="@dimen/edit_item_marginLeft"
+                            android:textColor="@color/gray_text_pay"
+                            android:gravity="center_vertical"/>
+                        <EditText
+                            android:id="@+id/mReceiverTelMet"
+                            android:layout_width="fill_parent"
+                            android:layout_height="@dimen/edit_item_height"
+                            android:layout_marginLeft="@dimen/edit_item_marginLeft"
+                            android:layout_toRightOf="@+id/tv_mReceiverTelMet"
+                            android:gravity="center_vertical"
+                            android:textSize="@dimen/text_size_normal"
+                            android:inputType="number"
+                            android:textColor="@color/gray_text_pay"
+                            android:background="@null"/>
+
+                </RelativeLayout>
+                <include layout="@layout/divide_line"/>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_mReceiverAddr"
+                        android:layout_height="@dimen/edit_item_height"
+                        android:layout_width="wrap_content"
+                        android:text="@string/lb_receiver_addr"
+                        android:layout_marginLeft="@dimen/edit_item_marginLeft"
+                        android:textColor="@color/gray_text_pay"
+                        android:gravity="center_vertical"/>
+                    <EditText
+                        android:id="@+id/et_mReceiverAddr"
+                        android:layout_width="fill_parent"
+                        android:layout_height="@dimen/edit_item_height"
+                        android:layout_marginLeft="@dimen/edit_item_marginLeft"
+                        android:layout_toRightOf="@+id/tv_mReceiverAddr"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/text_size_normal"
+                        android:textColor="@color/gray_text_pay"
+                        android:background="@null"/>
+
+                </RelativeLayout>
+                <include layout="@layout/divide_line"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/mBottomSubmit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="40.0dip"
+            android:background="#ffeef7ff"
+            android:paddingBottom="1.0dip"
+            android:paddingLeft="8.0dip"
+            android:layout_marginBottom="5dip"
+            android:paddingRight="8.0dip"
+            android:paddingTop="3.0dip">
+
+            <Button
+                android:id="@+id/mSubmitBtn"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_centerInParent="true"
+
+                android:background="@drawable/selector_btn_submit"
+                android:text="@string/btn_submit"
+                android:textColor="@color/white"
+                android:textSize="20.0sp"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>
