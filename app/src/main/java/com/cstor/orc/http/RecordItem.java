@@ -13,7 +13,7 @@ public class RecordItem {
 
 
     public static void getRecordItem(String bills,final SimpleCallBack callback) {
-        RequestParams params = new RequestParams("http://app.mypm25.cn/Express/detail");
+        RequestParams params = new RequestParams("http://192.168.0.51:8080/Express/detail");
         params.addBodyParameter("bill",bills);
         x.http().get(params, new  Callback.CommonCallback<String>() {
             @Override

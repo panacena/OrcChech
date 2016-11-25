@@ -38,7 +38,7 @@ public class ImageFileUpload {
     public static void upImage(String mOidMets,String mSenderMets,String mSexMets,String mNationMets,
                                String mBirthdayMets,String mBirthplaceMets,String mPidMets,String mTelMets
             ,String mReceiverMets, String mReceiverTelMets,String mReceiverAddr,Map<Integer,ImageItem> images, final SimpleCallBack callback) {
-        RequestParams params = new RequestParams("http://app.mypm25.cn/Express/save");
+        RequestParams params = new RequestParams("http://192.168.0.51:8080/Express/save");
                 //"http://192.168.0.51:8080/Express/save");
 
         for (int i = 0; i < images.size(); i++) {

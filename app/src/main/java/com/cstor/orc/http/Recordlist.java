@@ -15,7 +15,7 @@ public class Recordlist {
 
 
     public static void getRecordlist(final SimpleCallBack callback) {
-        RequestParams params = new RequestParams("http://app.mypm25.cn/Express/recordlist");
+        RequestParams params = new RequestParams("http://192.168.0.51:8080/Express/recordlist");
 
         x.http().get(params, new Callback.ProgressCallback<String>() {
             @Override
